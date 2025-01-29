@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: testname
+  name: testname
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: testname
+  template:
+    metadata:
+      labels:
+        app: testname
+    spec:
+      containers:
+      - image: httpd:2.4.63
+        name: httpd
